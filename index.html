@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f0f0f0;
+    }
+    .message {
+      font-size: 24px;
+      color: #333;
+    }
+    .highlight {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2a9d8f;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    ✅ Thank you for registering!<br><br>
+    You have been assigned to:
+    <div class="highlight" id="tableNumber">Loading...</div>
+  </div>
+
+  <script>
+    // Read the 'table' parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const table = urlParams.get("table") || "No table assigned";
+    document.getElementById("tableNumber").innerText = table;
+  </script>
+</body>
+</html>
